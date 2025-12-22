@@ -151,23 +151,9 @@ const ButtonTelescope = ({ content = 'Download' }: { content?: string }) => {
 };
 
 const ButtonOsmo = ({ content = 'Download' }: { content?: string }) => {
-	const isAnimatingRef = useRef(false);
-	const buttonRef = useRef<HTMLButtonElement>(null);
-
-	const handleMouseEnter = () => {
-		isAnimatingRef.current = true;
-
-		// After animation completes, reset to allow re-triggering
-		setTimeout(() => {
-			isAnimatingRef.current = false;
-		}, 250); // Match the animation duration
-	};
-
 	return (
 		<button
-			ref={buttonRef}
-			onMouseEnter={handleMouseEnter}
-			className='btn-osmo relative overflow-hidden rounded-sm bg-[#A1FF62]'
+			className='btn-osmo uppercase relative overflow-hidden rounded-sm bg-[#A1FF62] text-[18px] font-mono'
 		>
 			<div className='span-visible px-5 py-4'>
 				<span>{content}</span>

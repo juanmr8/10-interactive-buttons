@@ -12,6 +12,8 @@ html {
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
+	--timing: 0.45s;
+	--ease: cubic-bezier(1, 0, 0.25, 0.995);
 }
 
 @theme inline {
@@ -52,10 +54,10 @@ body {
 	}
 
 	.btn-osmo:hover .span-visible {
-		animation: slideOut 0.55s cubic-bezier(1, 0, 0.25, 0.995) forwards;
+		animation: slideOut var(--timing) var(--ease);
 	}
 
 	.btn-osmo:hover .span-hidden {
-		animation: slideIn 0.55s cubic-bezier(1, 0, 0.25, 0.995) forwards;
+		animation: slideIn var(--timing) var(--ease);
 	}
 }
