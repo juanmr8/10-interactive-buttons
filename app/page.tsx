@@ -1,7 +1,8 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import SplitText from 'gsap/SplitText';
 import gsap from 'gsap';
+import SplitText from 'gsap/SplitText';
+import { ArrowRight } from 'lucide-react';
+import { useRef } from 'react';
 gsap.registerPlugin(SplitText);
 
 export default function Page() {
@@ -152,9 +153,7 @@ const ButtonTelescope = ({ content = 'Download' }: { content?: string }) => {
 
 const ButtonOsmo = ({ content = 'Download' }: { content?: string }) => {
 	return (
-		<button
-			className='btn-osmo uppercase relative overflow-hidden rounded-sm bg-[#A1FF62] text-[18px] font-mono'
-		>
+		<button className='btn-osmo relative overflow-hidden rounded-sm bg-[#A1FF62] font-mono text-[18px] uppercase'>
 			<div className='span-visible px-5 py-4'>
 				<span>{content}</span>
 			</div>
@@ -172,9 +171,14 @@ const ButtonOsmo = ({ content = 'Download' }: { content?: string }) => {
 
 const ButtonDrake = ({ content = 'Download' }: { content?: string }) => {
 	return (
-		<button className='btn-drake uppercase relative overflow-hidden rounded-sm bg-[#A1FF62] text-[18px] font-mono'>
-			<div className='span-visible px-5 py-4'>
-				<span>{content}</span>
+		<button className='group relative flex items-center overflow-hidden font-mono text-[18px] uppercase'>
+			<div className="relative flex items-center rounded-sm px-5 py-4 before:absolute before:inset-0 before:z-[3] before:h-full before:w-full before:rounded-sm before:border before:border-black before:bg-white before:transition-all before:duration-300 before:content-[''] group-hover:before:w-[calc(100%+56px)]">
+				<span className='relative z-10 transition-all duration-300 group-hover:translate-x-[25px]'>
+					{content}
+				</span>
+			</div>
+			<div className="relative flex aspect-square h-full items-center justify-center rounded-full p-5 before:absolute before:inset-0 before:z-[2] before:aspect-square before:h-full before:rounded-full before:border before:border-black before:transition-all before:duration-300 before:content-[''] group-hover:before:translate-x-[-5px]">
+				<ArrowRight className='z-10 size-4' />
 			</div>
 		</button>
 	);
