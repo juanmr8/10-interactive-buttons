@@ -18,7 +18,7 @@ export default function Page() {
 					<ButtonOsmo />
 				</div>
 				<div className='flex items-center justify-center border-b lg:col-span-1'>
-					<ButtonC2MTL />
+					<ButtonDrake />
 				</div>
 			</div>
 		</>
@@ -164,6 +164,16 @@ const ButtonOsmo = ({ content = 'Download' }: { content?: string }) => {
 					transform: 'translateX(-100%) translateY(10px) rotate(-20deg)',
 				}}
 			>
+				<span>{content}</span>
+			</div>
+		</button>
+	);
+};
+
+const ButtonDrake = ({ content = 'Download' }: { content?: string }) => {
+	return (
+		<button className='btn-drake uppercase relative overflow-hidden rounded-sm bg-[#A1FF62] text-[18px] font-mono'>
+			<div className='span-visible px-5 py-4'>
 				<span>{content}</span>
 			</div>
 		</button>
